@@ -1,22 +1,25 @@
+import { useTranslation } from "react-i18next";
 import union from "../../public/images/new-union.svg";
 
 function Join() {
+  const { t } = useTranslation();
+
   const cards = [
     {
-      bold: "Получайте скидки",
-      title: "при оплате товаров и услуг Globel Token",
+      bold: t("join.card.highlight"),
+      title: t("join.card.text"),
     },
     {
-      bold: "Получайте скидки",
-      title: "при оплате товаров и услуг Globel Token",
+      bold: t("join.card.highlight"),
+      title: t("join.card.text"),
     },
     {
-      bold: "Получайте скидки",
-      title: "при оплате товаров и услуг Globel Token",
+      bold: t("join.card.highlight"),
+      title: t("join.card.text"),
     },
     {
-      bold: "Получайте скидки",
-      title: "при оплате товаров и услуг Globel Token",
+      bold: t("join.card.highlight"),
+      title: t("join.card.text"),
     },
   ];
 
@@ -25,20 +28,15 @@ function Join() {
       <div className="max-w-[1200px] mx-auto flex  flex-col xl:flex-row xl:justify-between xl:gap-8 relative z-[1]">
         <div className="w-full xl:max-w-[556px]">
           <h1 className="text-[#FFEFEF] font-['Commissioner'] mt-[40px] sm:mt-[50px] lg:mt-[106px] text-[24px] sm:text-[28px] lg:text-[36px] font-bold leading-normal">
-            Присоединяйтесь <br className="hidden sm:block" /> к сообществу
-            GLOBEL уже сегодня!
+            {t("join.title")}
           </h1>
 
           <p className="text-white font-['Commissioner'] text-[16px] sm:text-[18px] lg:text-[24px] font-normal leading-[130%] mt-[30px] sm:mt-[40px] lg:mt-[87px]">
-            Мы создали Globel Token, чтобы каждый пользователь — будь то
-            покупатель, продавец или инвестор — мог ощутить преимущества
-            цифровых активов на уже знакомом формате онлайн торговли, получая
-            при этом реальную выгоду от скидок, экономии и роста инвестиций.
+            {t("join.description1")}
           </p>
 
           <p className="text-white font-['Commissioner'] text-[16px] sm:text-[18px] lg:text-[24px] font-normal leading-[130%] mt-[15px] sm:mt-[20px] lg:mt-[34px]">
-            С каждым новым участником сообщество GLOBEL растёт, создавая всё
-            более благоприятные условия для владельцев токена.
+            {t("join.description2")}
           </p>
         </div>
 

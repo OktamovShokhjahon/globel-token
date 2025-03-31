@@ -1,60 +1,86 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import icon from "../../public/images/trend-up.svg";
 
 function Invest() {
-  const [cards, setCards] = useState([
+  const { t } = useTranslation();
+  const [visibleCards, setVisibleCards] = useState(3);
+
+  // Create a function to generate cards with current translations
+  const generateCards = () => [
     {
-      name: "Вклад на 1 год",
-      desc: "Если вы приобрели 1 000 G-Token за 100 000 ₹ на 12 месяцев, то через год количество ваших токенов",
-      boldTitle: "увеличится до 1 200",
-      detail:
-        "С учетом роста стоимости токена в первый год, вы сможете продать",
-      price: "за 156 000 ₹",
-      button: "купить G-TOKEN на 1 год",
+      name: t("invest.card.title"),
+      desc: t("invest.card.description"),
+      boldTitle: t("invest.card.increase"),
+      detail: t("invest.card.detail"),
+      price: t("invest.card.price"),
+      button: t("invest.card.button"),
       icon,
     },
     {
-      name: "Вклад на 1 год",
-      desc: "Если вы приобрели 1 000 G-Token за 100 000 ₹ на 12 месяцев, то через год количество ваших токенов",
-      boldTitle: "увеличится до 1 200",
-      detail:
-        "С учетом роста стоимости токена в первый год, вы сможете продать",
-      price: "за 156 000 ₹",
-      button: "купить G-TOKEN на 1 год",
+      name: t("invest.card.title"),
+      desc: t("invest.card.description"),
+      boldTitle: t("invest.card.increase"),
+      detail: t("invest.card.detail"),
+      price: t("invest.card.price"),
+      button: t("invest.card.button"),
       icon,
     },
     {
-      name: "Вклад на 1 год",
-      desc: "Если вы приобрели 1 000 G-Token за 100 000 ₹ на 12 месяцев, то через год количество ваших токенов",
-      boldTitle: "увеличится до 1 200",
-      detail:
-        "С учетом роста стоимости токена в первый год, вы сможете продать",
-      price: "за 156 000 ₹",
-      button: "купить G-TOKEN на 1 год",
+      name: t("invest.card.title"),
+      desc: t("invest.card.description"),
+      boldTitle: t("invest.card.increase"),
+      detail: t("invest.card.detail"),
+      price: t("invest.card.price"),
+      button: t("invest.card.button"),
       icon,
     },
-  ]);
+  ];
+
+  // Initialize cards state with current translations
+  const [cards, setCards] = useState(generateCards());
+
+  // Update cards when language changes
+  useEffect(() => {
+    setCards(generateCards());
+  }, [t]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setVisibleCards(1);
+      } else if (width < 1024) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="bg-hero3 h-[998px] bg-cover">
       <div className="main-container">
         <div>
           <h1 className="text-white font-['Commissioner'] text-3xl font-bold pt-[75px]">
-            Globel Token — инвестируй и зарабатывай!
+            {t("invest.title")}
           </h1>
           <p className="mt-[10px] text-white font-['Commissioner'] text-xl font-normal leading-[130%]">
-            Пользуйтесь вкладами с гарантированной доходностью до 100%
+            {t("invest.subtitle")}
           </p>
 
           <p className="max-w-[630px] mb-[22px] w-full mt-[66px] text-white font-['Commissioner'] text-xl font-normal leading-[130%]">
-            Сегодня мы предлагаем каждому пользователю вклады в G-Token на
-            сроки:
+            {t("invest.description")}
           </p>
 
           <div className="flex items-center justify-between max-w-[612px] w-full">
             <div>
               <h3 className="text-[#FF8964] font-['Commissioner'] text-xl font-medium leading-[130%]">
-                12 месяцев
+                {t("invest.periods.12months")}
               </h3>
               <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[55px] font-semibold leading-[130%]">
                 +20%
@@ -81,12 +107,12 @@ function Invest() {
           </div>
 
           <h1 className="text-white font-['Commissioner'] text-3xl font-bold pt-[104px]">
-            Ваш доход в G-Token
+            {t("invest.returns")}
           </h1>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(10px,2vw,20px)] relative top-[130px]">
-          {cards.map((card, index) => (
+          {cards.slice(0, visibleCards).map((card, index) => (
             <div className="p-[30px] bg-[#F7F7FB] rounded-[10px]" key={index}>
               <div className="flex items-center justify-between">
                 <h2 className="text-[#8009A9] font-commissioner text-[clamp(16px,1.8vw,20px)] font-bold">

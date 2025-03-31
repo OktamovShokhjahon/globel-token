@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import d1 from "../../public/images/d-1.png";
 import d2 from "../../public/images/d-2.png";
 import d3 from "../../public/images/d-3.png";
@@ -5,59 +6,45 @@ import thropie from "../../public/images/thropie.png";
 import { useState, useEffect } from "react";
 
 function Devices() {
-  const [visibleDevices, setVisibleDevices] = useState([]);
+  const { t } = useTranslation();
 
-  const devices = [
-    {
-      name: "Купив 10 G, вы получите",
-      bold: "подарки стоимостью до 20 000 ₹",
-      desc: "Например: смартфон Samsung Galaxy M35 5G, HONOR Pad 9 with Free Bluetooth Keyboard,  TOSHIBA 108 cm (43 inches) V Series Full HD Smart Android LED TV и много других ценных подарков.",
-      image: d1,
-      button: "Купить 10 G",
-    },
-    {
-      name: "Купив 10 G, вы получите",
-      bold: "подарки стоимостью до 20 000 ₹",
-      desc: "Например: смартфон Samsung Galaxy M35 5G, HONOR Pad 9 with Free Bluetooth Keyboard,  TOSHIBA 108 cm (43 inches) V Series Full HD Smart Android LED TV и много других ценных подарков.",
-      image: d2,
-      button: "Купить 10 G",
-    },
-    {
-      name: "Купив 10 G, вы получите",
-      bold: "подарки стоимостью до 20 000 ₹",
-      desc: "Например: смартфон Samsung Galaxy M35 5G, HONOR Pad 9 with Free Bluetooth Keyboard,  TOSHIBA 108 cm (43 inches) V Series Full HD Smart Android LED TV и много других ценных подарков.",
-      image: d3,
-      button: "Купить 10 G",
-    },
-  ];
+  // Create base device data structure
+  const deviceData = [{ image: d1 }, { image: d2 }, { image: d3 }];
 
+  // Create visible devices with translations
+  const [visibleDevices, setVisibleDevices] = useState(
+    deviceData.map((device) => ({
+      ...device,
+      name: t("devices.card.name"),
+      bold: t("devices.card.bold"),
+      desc: t("devices.card.description"),
+      button: t("devices.card.button"),
+    }))
+  );
+
+  // Update translations when language changes
   useEffect(() => {
-    const checkVisibility = () => {
-      const containerWidth =
-        document.querySelector(".main-container")?.offsetWidth || 0;
-      const cardWidth = 350; // Approximate width of a card including gaps
-      const cardsPerRow = Math.floor(containerWidth / cardWidth);
-      setVisibleDevices(devices.slice(0, cardsPerRow));
-    };
-
-    checkVisibility();
-    window.addEventListener("resize", checkVisibility);
-
-    return () => window.removeEventListener("resize", checkVisibility);
-  }, []);
+    setVisibleDevices(
+      deviceData.map((device) => ({
+        ...device,
+        name: t("devices.card.name"),
+        bold: t("devices.card.bold"),
+        desc: t("devices.card.description"),
+        button: t("devices.card.button"),
+      }))
+    );
+  }, [t]);
 
   return (
     <div className="h-[728px] bg-gradient-to-r from-[#391E3F] to-[#473163] py-[30px]">
       <div className="main-container relative">
         <div className="max-w-[728px]">
           <p className="text-white font-['Commissioner'] text-[clamp(16px,2.5vw,24px)] font-normal leading-[130%] pt-[30px] ">
-            Даже если вы не выиграете, ваши токены все равно принесут вам
-            прибыль так как они поступают вам на счет и через 12 месяцев вы
-            получите на 20% токенов больше
+            {t("devices.description")}
           </p>
 
           <h3 className="text-white font-['Commissioner'] text-[clamp(20px,2.8vw,30px)] font-bold leading-[130%] mt-[40px] md:mt-[73px]">
-            Инвестируйте в Globel Token — выигрывайте и зарабатывайте больше.
+            {t("devices.subtitle")}
           </h3>
         </div>
 
@@ -89,7 +76,7 @@ function Devices() {
                 <img
                   src={device.image}
                   className="rounded-[8px] w-full"
-                  alt=""
+                  alt={t("devices.card.imageAlt")}
                 />
 
                 <button className="rounded-[3px] bg-[linear-gradient(90deg,#3D387A_0%,#9F3259_100%)] w-full pt-[12px] md:pt-[16px] pb-[14px] md:pb-[18px] mt-[25px] md:mt-[35px] text-white text-[clamp(16px,1.8vw,18px)] font-semibold hover:opacity-90 transition-opacity">

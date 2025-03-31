@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="flex justify-between items-center pt-[30px] pb-[33px]">
       <div>
@@ -41,7 +45,7 @@ function Footer() {
       </div>
 
       <div className="flex items-center gap-[20px]">
-        <p className="font-bold font-commissioner">Мы в соцсетях</p>
+        <p className="font-bold font-commissioner">{t("footer.social")}</p>
 
         <div className="flex items-center gap-[10px]">
           <svg

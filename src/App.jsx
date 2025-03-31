@@ -1,5 +1,6 @@
 // css
 import "./App.css";
+import { useTranslation } from "react-i18next";
 
 // components
 import Banner from "./components/Banner";
@@ -16,6 +17,8 @@ import Promotion from "./components/Promotion";
 import Trust from "./components/Trust";
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <>
       <header>

@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "gToken": "G-token",
+    "sales": "Profitable Purchases",
+    "investment": "Investment",
+    "prizes": "Prizes",
+    "information": "Information"
+  },
+  "banner": {
+    "title": "Globel Token",
+    "subtitle": "the world's first digital currency that is",
+    "highlight": "backed by real goods!",
+    "buyButton": "Buy"
+  },
+  "trust": {
+    "mainText": "Usually, cryptocurrency exists on the internet and is not backed by any real goods, and only Globel Token can be used to pay for goods on the GLOBEL marketplace",
+    "secondaryText": "This means that your digital money turns into real currency, backed by millions of real goods"
+  },
+  "integration": {
+    "title": "For the first time, digital currency has become part of regular purchases, uniting virtual and real worlds.",
+    "highlight": "This is not just a new trend, but a convenient tool that makes life easier.",
+    "description": "Join the GLOBEL ecosystem and use tokens wisely: buy goods more profitably, invest and earn, become part of the economy of the future!",
+    "button": "Buy G-Token"
+  },
+  "products": {
+    "title": "Profitable purchases with Globel Token on GLOBEL marketplace",
+    "choice": {
+      "title": "You always have a choice",
+      "description": "You can pay the full price of the product, or you can buy G-Token and pay with them to get a discount"
+    },
+    "items": {
+      "headphones": {
+        "name": "You are buying headphones for 2,000₹",
+        "desc": "Discount when paying with G-Token",
+        "sub": "Headphones cost in G-Token",
+        "price": "1,920 ₹",
+        "detail": "(2,000-4%=1,920 ₹)",
+        "btn": "save 80 ₹"
+      },
+      "tablet": {
+        "name": "You are buying a tablet for 20,000 ₹",
+        "desc": "Discount when paying with G-Token",
+        "sub": "Tablet cost in G-Token",
+        "price": "19,550 ₹",
+        "detail": "(20,000-4%=19,200 ₹)",
+        "btn": "save 450 ₹"
+      },
+      "laptop": {
+        "name": "You are buying a laptop for 90,000₹",
+        "desc": "Discount when paying with G-Token",
+        "sub": "Laptop cost in G-Token",
+        "price": "88,425 ₹",
+        "detail": "(90,000-4%=86,100 ₹)",
+        "btn": "save 1575 ₹"
+      }
+    }
+  },
+  "invest": {
+    "title": "Globel Token — invest and earn!",
+    "subtitle": "Use deposits with guaranteed returns up to 100%",
+    "description": "Today we offer each user G-Token deposits for terms:",
+    "periods": {
+      "12months": "12 months",
+      "24months": "24 months",
+      "36months": "36 months"
+    },
+    "returns": "Your income in G-Token",
+    "card": {
+      "title": "1 year deposit",
+      "description": "If you purchased 1,000 G-Token for 100,000 ₹ for 12 months, then in a year the number of your tokens",
+      "increase": "will increase to 1,200",
+      "detail": "Taking into account the growth in token value in the first year, you can sell",
+      "price": "for 156,000 ₹",
+      "button": "buy G-TOKEN for 1 year"
+    }
+  },
+  "promotion": {
+    "title": "Globel Invest+ promotion invest and",
+    "highlight": "win!",
+    "subtitle": "By buying Globel Token, you not only increase your capital but also participate in the prize draw:"
+  },
+  "join": {
+    "title": "Join the GLOBEL community today!",
+    "description1": "We created Globel Token so that every user — whether a buyer, seller, or investor — could experience the benefits of digital assets in the familiar format of online trading, while receiving real benefits from discounts, savings, and investment growth.",
+    "description2": "With each new participant, the GLOBEL community grows, creating increasingly favorable conditions for token holders.",
+    "card": {
+      "highlight": "Get discounts",
+      "text": "when paying for goods and services with Globel Token"
+    }
+  },
+  "buy": {
+    "title": "Don't miss your chance to be part of this success — get Globel Token and start benefiting now!",
+    "button": "Buy G-Token"
+  },
+  "devices": {
+    "description": "Even if you don't win, your tokens will still bring you profit as they are credited to your account and after 12 months you will receive 20% more tokens",
+    "subtitle": "Invest in Globel Token — win and earn more.",
+    "card": {
+      "name": "By buying 10 G, you will receive",
+      "bold": "gifts worth up to 20,000 ₹",
+      "description": "For example: Samsung Galaxy M35 5G smartphone, HONOR Pad 9 with Free Bluetooth Keyboard, TOSHIBA 108 cm (43 inches) V Series Full HD Smart Android LED TV and many other valuable gifts.",
+      "button": "Buy 10 G",
+      "imageAlt": "Prize device image"
+    }
+  },
+  "information": {
+    "title": "Useful Information",
+    "readMore": "read more",
+    "card": {
+      "title": "Globel Finance: Project Essence",
+      "description": "Globel Finance is an innovative bonus-payment system of the GLOBEL marketplace, which aims to combine all the familiar advantages of marketplace bonus systems (discounts, bonuses, and..."
+    }
+  },
+  "footer": {
+    "social": "We are in social networks"
+  }
+}
