@@ -7,33 +7,34 @@ import { useState, useEffect } from "react";
 
 function Devices() {
   const { t } = useTranslation();
+  const [visibleCards, setVisibleCards] = useState(3);
 
-  // Create base device data structure
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setVisibleCards(1);
+      } else if (width < 1024) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const deviceData = [{ image: d1 }, { image: d2 }, { image: d3 }];
 
-  // Create visible devices with translations
-  const [visibleDevices, setVisibleDevices] = useState(
-    deviceData.map((device) => ({
-      ...device,
-      name: t("devices.card.name"),
-      bold: t("devices.card.bold"),
-      desc: t("devices.card.description"),
-      button: t("devices.card.button"),
-    }))
-  );
-
-  // Update translations when language changes
-  useEffect(() => {
-    setVisibleDevices(
-      deviceData.map((device) => ({
-        ...device,
-        name: t("devices.card.name"),
-        bold: t("devices.card.bold"),
-        desc: t("devices.card.description"),
-        button: t("devices.card.button"),
-      }))
-    );
-  }, [t]);
+  const devices = deviceData.map((device) => ({
+    ...device,
+    name: t("devices.card.name"),
+    bold: t("devices.card.bold"),
+    desc: t("devices.card.description"),
+    button: t("devices.card.button"),
+  }));
 
   return (
     <div className="h-[728px] bg-gradient-to-r from-[#391E3F] to-[#473163] py-[30px]">
@@ -57,11 +58,11 @@ function Devices() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] md:gap-[30px] mt-[33px]">
-          {visibleDevices.map((device, index) => {
+          {devices.slice(0, visibleCards).map((device, index) => {
             return (
               <div
                 key={index}
-                className="pt-[25px] md:pt-[35px] pb-[30px] md:pb-[41px] px-[20px] md:px-[31px] rounded-[16px] bg-[#F0F1F6]"
+                className="pt-[25px] md:pt-[35px] pb-[30px] md:pb-[41px] px-[20px] md:px-[31px] rounded-[16px] bg-[#F0F1F6] overflow-hidden"
               >
                 <h2 className="text-black font-['Commissioner'] text-[clamp(20px,2.5vw,28px)] font-bold leading-[120%]">
                   {device.name}

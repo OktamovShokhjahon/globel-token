@@ -66,47 +66,47 @@ function Invest() {
     <div className="bg-hero3 h-[998px] bg-cover">
       <div className="main-container">
         <div>
-          <h1 className="text-white font-['Commissioner'] text-3xl font-bold pt-[75px]">
+          <h1 className="text-white font-['Commissioner'] text-[clamp(24px,3vw,36px)] font-bold pt-[75px]">
             {t("invest.title")}
           </h1>
-          <p className="mt-[10px] text-white font-['Commissioner'] text-xl font-normal leading-[130%]">
+          <p className="mt-[10px] text-white font-['Commissioner'] text-[clamp(16px,2vw,24px)] font-normal leading-[130%]">
             {t("invest.subtitle")}
           </p>
 
-          <p className="max-w-[630px] mb-[22px] w-full mt-[66px] text-white font-['Commissioner'] text-xl font-normal leading-[130%]">
+          <p className="max-w-[630px] mb-[22px] w-full mt-[66px] text-white font-['Commissioner'] text-[clamp(16px,2vw,24px)] font-normal leading-[130%]">
             {t("invest.description")}
           </p>
 
-          <div className="flex items-center justify-between max-w-[612px] w-full">
+          <div className="flex items-center justify-between max-w-[612px] w-full lt:flex-row flex-col lt:gap-0 gap-[20px]">
             <div>
-              <h3 className="text-[#FF8964] font-['Commissioner'] text-xl font-medium leading-[130%]">
+              <h3 className="text-[#FF8964] font-['Commissioner'] text-[clamp(16px,2vw,24px)] font-medium leading-[130%]">
                 {t("invest.periods.12months")}
               </h3>
-              <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[55px] font-semibold leading-[130%]">
+              <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[clamp(40px,5vw,55px)] font-semibold leading-[130%]">
                 +20%
               </h1>
             </div>
 
             <div className="">
-              <h3 className="text-[#FF8964] font-['Commissioner'] text-xl font-medium leading-[130%]">
+              <h3 className="text-[#FF8964] font-['Commissioner'] text-[clamp(16px,2vw,24px)] font-medium leading-[130%]">
                 24 месяца
               </h3>
-              <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[55px] font-semibold leading-[130%]">
+              <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[clamp(40px,5vw,55px)] font-semibold leading-[130%]">
                 +50%
               </h1>
             </div>
 
             <div>
-              <h3 className="text-[#FF8964] font-['Commissioner'] text-xl font-medium leading-[130%]">
+              <h3 className="text-[#FF8964] font-['Commissioner'] text-[clamp(16px,2vw,24px)] font-medium leading-[130%]">
                 36 месяцев
               </h3>
-              <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[55px] font-semibold leading-[130%]">
+              <h1 className="mt-[-10px] text-[#FF8964] font-['Commissioner'] text-[clamp(40px,5vw,55px)] font-semibold leading-[130%]">
                 +100%
               </h1>
             </div>
           </div>
 
-          <h1 className="text-white font-['Commissioner'] text-3xl font-bold pt-[104px]">
+          <h1 className="text-white font-['Commissioner'] text-[clamp(24px,3vw,36px)] font-bold pt-[104px]">
             {t("invest.returns")}
           </h1>
         </div>
@@ -139,7 +139,7 @@ function Invest() {
                 {card.price}
               </p>
 
-              <button className="uppercase font-bold font-commissioner -tracking-tighter w-full text-white py-[10px] mt-[clamp(20px,2.5vw,29px)] rounded-[4px] bg-gradient-to-r from-[#3D387A] to-[#9F3259] hover:scale-105 transition-all duration-300 text-[14px]">
+              <button className="uppercase font-bold font-commissioner -tracking-tighter w-full text-white py-[10px] mt-[clamp(20px,2.5vw,29px)] rounded-[4px] bg-gradient-to-r from-[#3D387A] to-[#9F3259] hover:scale-105 transition-all duration-300 text-[clamp(12px,1.4vw,14px)]">
                 {card.button}
               </button>
             </div>

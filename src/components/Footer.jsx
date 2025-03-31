@@ -4,7 +4,7 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex justify-between items-center pt-[30px] pb-[33px]">
+    <footer className="flex justify-between items-center pt-[30px] pb-[33px] md:flex-row flex-col flex:gap-0 gap-[20px]">
       <div>
         <svg
           width="208"
